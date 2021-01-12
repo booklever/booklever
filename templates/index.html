@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class=row>
+    <div class="col-md-9">
+
+      {% for url, book in books.items %}
+        <div class=row>
+          <div class=col-12>
+            <a href="/read/{{ url }}/{{ book.first_page }}">{{ book.title }}</a><br/>
+            <br/>
+            <hr/>
+          </div>
+        </div>
+      {% endfor %}
+
+    </div>
+
+    <div class=col-3>
+    </div>
+  </div>
+{% endblock %}

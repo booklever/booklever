@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <style>
+      img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+      }
+  </style>
+
+  <div class="row">
+    <div class="col-lg-3">
+      <h2>{{ book_title }}</h2>
+        {% for page, name in pages.items %}
+          <a href="/read/{{ book }}/{{ page }}"
+             class="list-group-item list-group-item-action bg-light">
+            {{ name }}</a>
+        {% endfor %}
+    </div>
+
+    <div class="col-lg-6 col-sm-12">
+      {{ body|safe }}
+    </div>
+    <div class=col-md-3>
+    </div>
+  </div>
+  </div>
+  <!-- Menu Toggle Script -->
+  <script>
+      $("#menu-toggle").click(function (e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+      });
+  </script>
+
+{% endblock %}
+
