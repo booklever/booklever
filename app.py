@@ -63,7 +63,7 @@ def distll_func():
 
 urlpatterns = [
     distill_path('', index, name='index', distill_func=lambda *args: None, distill_file='index.html'),
-    distill_path("read/<slug:book>/<slug:page>", page_view, name='page', distill_func=distll_func),
+    distill_path("read/<slug:book>/<slug:page>.html", page_view, name='page', distill_func=distll_func),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 app = get_wsgi_application()
